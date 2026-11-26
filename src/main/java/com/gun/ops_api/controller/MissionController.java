@@ -9,8 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
@@ -35,8 +33,8 @@ public class MissionController {
         return ResponseEntity.ok(missionService.assingAgent(missionId, agentId));
     }
 
-    @PostMapping("/{missionId}/complete")
+    @PatchMapping("/{missionId}/complete")
     public ResponseEntity<Mission> completeMission(@PathVariable Long missionId) {
         return ResponseEntity.ok(missionService.completeMission(missionId));
-    }    
+    }  
 }
